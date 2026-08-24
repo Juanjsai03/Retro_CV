@@ -283,7 +283,7 @@ model-viewer {
 }
 
 /* ============================================================
-   9. RESPONSIVE DESIGN FLUIDO
+   9. RESPONSIVE DESIGN FLUIDO (ORDEN CORREGIDO PARA MÓVIL)
    ============================================================ */
 @media (max-width: 1000px) {
     .banner-lateral {
@@ -305,11 +305,22 @@ model-viewer {
         width: 100%;
         padding: 0 16px;
         align-items: center;
+        gap: 20px;
     }
+
+    /* 1. La columna de widgets pasa al primer lugar arriba */
+    .contenedor-widgets {
+        order: 1;
+        width: 100%;
+    }
+
+    /* 2. La columna izquierda con el 3D y fotos pasa debajo */
     .columna-izquierda {
+        order: 2;
         width: 100%;
         max-width: 320px;
     }
+
     .widget-con-foto {
         flex-direction: column;
         text-align: center;
