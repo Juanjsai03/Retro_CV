@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+  <defs>
+    <!-- Filtro de sombra suave retro para dar relieve geométrico -->
+    <filter id="pixel-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="1" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- 1. CINTAS INTERCONECTADAS: MORADO OSCURO Y NEÓN (Fondo base) -->
+  <!-- Cruces y diagonales guía -->
+  <path d="M0,50 L50,0 L100,50 L50,100 Z" fill="none" stroke="#7e22ce" stroke-width="12" stroke-linejoin="miter"/>
+  <path d="M0,50 L50,100 L100,50 L50,0 Z" fill="none" stroke="#a855f7" stroke-width="4" stroke-linejoin="miter"/>
+
+  <!-- 2. LABERINTO GEOMÉTRICO EXTERIOR: CELESTE / CYAN -->
+  <path d="M0,0 L20,0 L50,30 L80,0 L100,0 L100,20 L70,50 L100,80 L100,100 L80,100 L50,70 L20,100 L0,100 L0,80 L30,50 L0,20 Z" 
+        fill="none" 
+        stroke="#0284c7" 
+        stroke-width="8" 
+        stroke-linejoin="miter" />
+  
+  <path d="M0,0 L20,0 L50,30 L80,0 L100,0 L100,20 L70,50 L100,80 L100,100 L80,100 L50,70 L20,100 L0,100 L0,80 L30,50 L0,20 Z" 
+        fill="none" 
+        stroke="#38bdf8" 
+        stroke-width="3" 
+        stroke-linejoin="miter" />
+
+  <!-- 3. ROMBO CENTRAL ENREDADO: FUCSIA / MAGENTA -->
+  <rect x="34" y="34" width="32" height="32" transform="rotate(45 50 50)" 
+        fill="none" 
+        stroke="#ec4899" 
+        stroke-width="7" 
+        filter="url(#pixel-shadow)" />
+
+  <rect x="37" y="37" width="26" height="26" transform="rotate(45 50 50)" 
+        fill="none" 
+        stroke="#f472b6" 
+        stroke-width="2" />
+
+  <!-- 4. NÚCLEO Y DETALLES DIAMANTE: NARANJA / ÁMBAR -->
+  <!-- Rombo central interior -->
+  <rect x="44" y="44" width="12" height="12" transform="rotate(45 50 50)" 
+        fill="#f97316" 
+        stroke="#ffedd5" 
+        stroke-width="1.5" />
+
+  <!-- Pequeños diamantes en las esquinas de los cruces -->
+  <rect x="46" y="-4" width="8" height="8" transform="rotate(45 50 0)" fill="#fb923c" stroke="#7c2d12" stroke-width="1" />
+  <rect x="46" y="96" width="8" height="8" transform="rotate(45 50 100)" fill="#fb923c" stroke="#7c2d12" stroke-width="1" />
+  <rect x="-4" y="46" width="8" height="8" transform="rotate(45 0 50)" fill="#fb923c" stroke="#7c2d12" stroke-width="1" />
+  <rect x="96" y="46" width="8" height="8" transform="rotate(45 100 50)" fill="#fb923c" stroke="#7c2d12" stroke-width="1" />
+</svg>

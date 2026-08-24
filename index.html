@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoja de Vida | Juan Sebastian Anaya</title>
+
+    <!-- Fuente retro Press Start 2P -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <!-- Librería para renderizado 3D real (.glb) -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Fondos laterales de rombos -->
+    <div class="banner-lateral banner-izquierdo"></div>
+    <div class="banner-lateral banner-derecho"></div>
+
+    <!-- Contenedor principal de 2 columnas -->
+    <main class="layout-principal">
+
+        <!-- COLUMNA IZQUIERDA: VISOR 3D + PROYECTOS DEBAJO -->
+        <aside class="columna-izquierda">
+            
+            <!-- Bloque 3D Interactivo -->
+            <div class="panel-3d">
+                <div class="escenario-3d">
+                    <model-viewer 
+                        id="avatar-3d" 
+                        src="Yo_3D.glb" 
+                        alt="Modelo 3D Interactivo" 
+                        camera-orbit="0deg 75deg 105%"
+                        interaction-prompt="none"
+                        shadow-intensity="1.2"
+                        exposure="1.1"
+                        camera-controls
+                        disable-zoom>
+                    </model-viewer>
+                </div>
+                
+                <div class="control-rotacion">
+                    <label for="rotar-slider">&lt; ROTAR 360° &gt;</label>
+                    <input type="range" id="rotar-slider" min="-180" max="180" value="0" step="1">
+                </div>
+            </div>
+
+            <!-- Galería de fotos debajo del visor 3D -->
+            <!-- Proyecto 1 -->
+            <div class="tarjeta-foto">
+                <h4>ESP32 IoT</h4>
+                <img src="proyecto3.png" alt="ESP32 (IoT)">
+                <p>Circuito de Monitoreo<br>(variables ambientales)</p>
+            </div>
+
+            <!-- Proyecto 2 -->
+            <div class="tarjeta-foto">
+                <h4>GUI Python</h4>
+                <img src="proyecto2.png" alt="GUI Python">
+                <p>Interfaz Gráfica para<br>Sistemas Embebidos con IoT</p>
+            </div>
+
+            <!-- Proyecto 3 -->
+            <div class="tarjeta-foto">
+                <h4>Simulador de anestesia oral local</h4>
+                <img src="proyecto4.png" alt="Simulador de anestesia oral local">
+                <p>Simulador fisico<br>Software + Hardware</p>
+            </div>
+
+            <!-- Proyecto 4 -->
+            <div class="tarjeta-foto">
+                <h4>Validación Experimental</h4>
+                <img src="proyecto5.png" alt="Validación Experimental">
+                <p>Evaluación de prototipos<br>Simulador de anestesia oral local</p>
+            </div>
+
+            <!-- Bloque 3D 2: Segundo Modelo / Prototipo 3D -->
+            <div class="panel-3d">
+                <div class="escenario-3d">
+                    <model-viewer 
+                        id="objeto-3d-secundario" 
+                        src="SAOL1.glb" 
+                        alt="Modelo 3D Proyecto" 
+                        camera-orbit="0deg 75deg 105%"
+                        interaction-prompt="none"
+                        shadow-intensity="1.2"
+                        exposure="1.1"
+                        camera-controls
+                        disable-zoom>
+                    </model-viewer>
+                </div>
+                
+                <div class="control-rotacion">
+                    <label for="rotar-slider-2">&lt; ROTAR OBJETO 360° &gt;</label>
+                    <input type="range" id="rotar-slider-2" min="-180" max="180" value="0" step="1">
+                </div>
+            </div>
+
+        </aside>
+
+        <!-- COLUMNA DERECHA: WIDGETS -->
+        <div class="contenedor-widgets">
+
+            <!-- Widget 1: Perfil -->
+            <div class="widget widget-morado widget-con-foto">
+                <img src="perfil_juanchi.png" alt="Foto de perfil" class="foto-perfil">
+                <div class="texto-perfil">
+                    <h3>Juan Sebastian Anaya</h3>
+                    <p>Bioingeniero / Programación, Electrónica e Investigación</p>
+                </div>
+            </div>
+
+            <!-- Widget 2: Habilidades -->
+            <div class="widget widget-azul">
+                <h3>Habilidades</h3>
+                <p>-KiCAD  -ESP32  -Python</p>
+                <p>-Bioinformática  -Biotecnología</p>
+                <p>-MySQL  -C++  -Modelado 3D</p>
+            </div>
+
+            <!-- Widget 3: Experiencia -->
+            <div class="widget widget-verde">
+                <h3>Experiencia</h3>
+                <ul class="lista-experiencia">
+                    <li>
+                        <span class="empresa">Universidad El Bosque</span>
+                        <span class="fecha">(Ene 2021 - Dic 2025)</span>
+                        <p class="rol">Asistente de Asignatura: Bioinstrumentación con Python</p>
+                    </li>
+
+                    <li>
+                        <span class="empresa">Universidad El Bosque</span>
+                        <span class="fecha">(Ago 2022 - Ene 2023)</span>
+                        <p class="rol">Asistente de Asignatura: Transductores</p>
+                    </li>
+
+                    <li>
+                        <span class="empresa">Universidad El Bosque (HUB-iEX)</span>
+                        <span class="fecha">(Ago 2025 - Feb 2026)</span>
+                        <p class="rol">Auxiliar de Asesorías y Consultorías</p>
+                    </li>
+
+                    <li>
+                        <span class="empresa">EVEDESA S.A.S.</span>
+                        <span class="fecha">(Jul 2025 - Actualidad)</span>
+                        <p class="rol">Partner Manager</p>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Widget 4: Idiomas -->
+            <div class="widget widget-naranja">
+                <h3>Idiomas</h3>
+                <p>Español (Nativo)</p>
+                <p>Inglés (Competencia profesional)</p>
+            </div>
+
+            <!-- Widget 5: Educación -->
+            <!-- Widget: Educación -->
+            <div class="widget widget-rojo">
+                <h3>Educación</h3>
+                <ul class="lista-formacion">
+                    <li>
+                        <span class="titulo-grado">Pregrado en Bioingeniería</span>
+                        <span class="fecha-formacion">(2019 - 2025)</span>
+                        <p class="institucion">Universidad El Bosque | Bogotá</p>
+                        <p class="detalle">Énfasis en instrumentación biomédica, sistemas electrónicos y bioinformática.</p>
+                        <p class="titulo-obtenido">Título obtenido: Bioingeniero</p>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Widget: Cursos & Certificaciones -->
+            <div class="widget widget-morado">
+                <h3>Cursos & Certificaciones</h3>
+                <ul class="lista-formacion">
+                    <li>
+                        <span class="nombre-curso">Introducción a programación con Python</span>
+                        <span class="fecha-formacion">(2020)</span>
+                        <p class="institucion">Universidad El Bosque</p>
+                    </li>
+                    <li>
+                        <span class="nombre-curso">Introducción a programación con MATLAB</span>
+                        <span class="fecha-formacion">(2020)</span>
+                        <p class="institucion">Universidad El Bosque</p>
+                    </li>
+                    <li>
+                        <span class="nombre-curso">Introducción a Machine Learning</span>
+                        <span class="fecha-formacion">(2021)</span>
+                        <p class="institucion">Universidad El Bosque</p>
+                    </li>
+                    <li>
+                        <span class="nombre-curso">Mantenimiento de equipos biomédicos</span>
+                        <span class="fecha-formacion">(2023)</span>
+                        <p class="institucion">Politécnico Intercontinental</p>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Widget 7: Proyectos Destacados -->
+            <div class="widget widget-azul">
+                <h3>Proyectos de Ingeniería</h3>
+                <div class="lista-proyectos-detallada">
+                    
+                    <!-- Proyecto 1 -->
+                    <div class="item-proyecto">
+                        <div class="cabecera-proyecto">
+                            <span class="nombre-proyecto">Sistema de Monitoreo Ambiental e IoT</span>
+                            <span class="fecha-proyecto">(2025)</span>
+                        </div>
+                        <p class="rol-proyecto">Prototipado / Desarrollo | Bogotá</p>
+                        <ul class="lista-tareas">
+                            <li>Diseño esquemático y ruteo de PCB a medida utilizando KiCad.</li>
+                            <li>Desarrollo de firmware para ESP32.</li>
+                            <li>Integración de sensores analógicos y digitales.</li>
+                            <li>Implementación de telemetría inalámbrica.</li>
+                            <li>Registro y visualización de variables en tiempo real.</li>
+                            <li>Integración de componentes de hardware y software para el desarrollo del sistema.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Proyecto 2 -->
+                    <div class="item-proyecto">
+                        <div class="cabecera-proyecto">
+                            <span class="nombre-proyecto">Simulador de Anestesia Oral Local</span>
+                            <span class="fecha-proyecto">(2025)</span>
+                        </div>
+                        <p class="rol-proyecto">Tesis de Grado | Bogotá</p>
+                        <ul class="lista-tareas">
+                            <li>Desarrollo de un prototipo de simulación para el entrenamiento de estudiantes de odontología.</li>
+                            <li>Desarrollo de software para la interacción y configuración del prototipo.</li>
+                            <li>Diseño e integración electrónica.</li>
+                            <li>Implementación de sistemas de adquisición de datos.</li>
+                            <li>Integración de sensores, microcontroladores y actuadores.</li>
+                            <li>Validación experimental del funcionamiento del sistema.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Proyecto 3 -->
+                    <div class="item-proyecto">
+                        <div class="cabecera-proyecto">
+                            <span class="nombre-proyecto">Semillero de Microelectrónica</span>
+                            <span class="fecha-proyecto">(2023 - 2024)</span>
+                        </div>
+                        <p class="rol-proyecto">Hardware y Datos | Bogotá</p>
+                        <ul class="lista-tareas">
+                            <li>Participación en actividades de diseño microelectrónico.</li>
+                            <li>Diseño de componentes y encapsulados.</li>
+                            <li>Simulación de componentes y encapsulados.</li>
+                            <li>Desarrollo de soluciones de hardware orientadas a proyectos de ingeniería.</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Widget 10: Enlaces y Repositorios -->
+            <div class="widget widget-magenta">
+                <h3>CONTACTO</h3>
+                <p>Tel: +57 300 683 3504</p>
+                <br>
+                <a href="mailto:juance.3002@gmail.com">[ Email ]</a>
+                <br>
+                <br>
+                <p>juance.3002@gmail.com</p>
+                <div class="links-retro">
+                    <a href="https://github.com/Juanjsai03" target="_blank">[ GitHub ]</a>
+                    <a href="https://www.linkedin.com/in/sebastian-anaya-infante-bb04a43b3/" target="_blank">[ LinkedIn ]</a>
+                </div>
+            </div>
+
+            <!-- Widget 12: Pie de página / Créditos Retro -->
+            <div class="widget widget-gris">
+                <p style="text-align: center; font-size: 0.65rem;">
+                    © 2026 • Creado desde cero con HTML & CSS puro • [ START ] By Juan Anaya
+                </p>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Script de interacción 3D independiente para cada visor -->
+    <script>
+        // Control 1: Avatar
+        const slider1 = document.getElementById('rotar-slider');
+        const visor1 = document.getElementById('avatar-3d');
+        slider1.addEventListener('input', (e) => {
+            visor1.cameraOrbit = `${e.target.value}deg 75deg 105%`;
+        });
+
+        // Control 2: Segundo Modelo 3D
+        const slider2 = document.getElementById('rotar-slider-2');
+        const visor2 = document.getElementById('objeto-3d-secundario');
+        slider2.addEventListener('input', (e) => {
+            visor2.cameraOrbit = `${e.target.value}deg 75deg 105%`;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,460 @@
+/* ============================================================
+   1. RESET BÁSICO
+   ============================================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ============================================================
+   2. CUERPO DE LA PÁGINA
+   ============================================================ */
+body {
+    background-color: #0f172a;
+    color: #f8fafc;
+    font-family: 'Press Start 2P', monospace;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 24px 0;
+    overflow-x: hidden;
+}
+
+/* ============================================================
+   3. FRANJAS LATERALES FIJAS
+   ============================================================ */
+.banner-lateral {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 140px;
+    background-image: url('patron.svg');
+    background-repeat: repeat;
+    background-size: 70px 70px;
+    background-position: top center;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.85;
+    image-rendering: pixelated;
+}
+
+.banner-izquierdo {
+    left: 0;
+}
+
+.banner-derecho {
+    right: 0;
+}
+
+/* ============================================================
+   4. ESTRUCTURA DE 2 COLUMNAS COMPACTA
+   ============================================================ */
+.layout-principal {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 16px;
+    width: calc(100% - 300px);
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+/* ============================================================
+   5. COLUMNA IZQUIERDA: 3D + FOTOS DEBAJO
+   ============================================================ */
+.columna-izquierda {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 250px;
+    flex-shrink: 0;
+}
+
+.panel-3d {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.escenario-3d {
+    width: 100%;
+    height: 340px;
+    background: radial-gradient(circle at center 85%, rgba(255, 255, 255, 0.08) 0%, transparent 65%);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+model-viewer {
+    width: 100%;
+    height: 100%;
+    --poster-color: transparent;
+    outline: none;
+}
+
+.control-rotacion {
+    width: 100%;
+    background-color: #1e293b;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    padding: 10px 8px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.control-rotacion label {
+    display: block;
+    font-size: 0.55rem;
+    color: #38bdf8;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+/* ============================================================
+   ESTILOS RETRO PARA TODOS LOS SLIDERS
+   ============================================================ */
+#rotar-slider,
+#rotar-slider-2 {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 90%;
+    height: 6px;
+    background: #0f172a;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Cuadrado fucsia (Chrome / Edge / Safari) */
+#rotar-slider::-webkit-slider-thumb,
+#rotar-slider-2::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    background: #ec4899;
+    border: 2px solid #ffffff;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+/* Cuadrado fucsia (Firefox) */
+#rotar-slider::-moz-range-thumb,
+#rotar-slider-2::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    background: #ec4899;
+    border: 2px solid #ffffff;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+/* ============================================================
+   TARJETAS DE PROYECTOS (TÍTULO + FOTO + DESCRIPCIÓN)
+   ============================================================ */
+.tarjeta-foto {
+    width: 100%;
+    background-color: #1e293b;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    padding: 12px 10px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Título superior de la tarjeta */
+.tarjeta-foto h4 {
+    font-size: 0.62rem;
+    color: #38bdf8;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+/* Imagen del proyecto */
+.tarjeta-foto img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+    margin-bottom: 8px;
+    background-color: #0f172a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Descripción inferior */
+.tarjeta-foto p {
+    font-size: 0.48rem;
+    line-height: 1.5;
+    color: #cbd5e1;
+    margin: 0;
+    padding: 0 2px;
+}
+
+/* ============================================================
+   6. COLUMNA DERECHA: WIDGETS
+   ============================================================ */
+.contenedor-widgets {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex: 1;
+    min-width: 0;
+}
+
+.widget {
+    width: 100%;
+    padding: 18px 20px;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.widget h3 {
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.widget p {
+    font-size: 0.7rem;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+.widget-con-foto {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.foto-perfil {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    image-rendering: pixelated;
+    filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.5));
+}
+
+/* ============================================================
+   7. PALETA DE COLORES
+   ============================================================ */
+.widget-morado   { background-color: #581c87; }
+.widget-azul     { background-color: #1e3a8a; }
+.widget-verde    { background-color: #064e3b; }
+.widget-naranja  { background-color: #7c2d12; }
+.widget-rojo     { background-color: #991b1b; }
+.widget-cian     { background-color: #0e7490; }
+.widget-magenta  { background-color: #831843; }
+.widget-amarillo { background-color: #854d0e; }
+.widget-gris     { background-color: #1e293b; }
+
+/* ============================================================
+   8. ENLACES RETRO
+   ============================================================ */
+.links-retro {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.links-retro a {
+    color: #38bdf8;
+    text-decoration: none;
+    font-size: 0.65rem;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.links-retro a:hover {
+    color: #f472b6;
+    transform: scale(1.05);
+}
+
+/* ============================================================
+   9. RESPONSIVE DESIGN FLUIDO
+   ============================================================ */
+@media (max-width: 1000px) {
+    .banner-lateral {
+        width: 70px;
+        background-size: 70px 70px;
+        opacity: 0.3;
+    }
+    .layout-principal {
+        width: calc(100% - 160px);
+    }
+}
+
+@media (max-width: 760px) {
+    .banner-lateral {
+        display: none;
+    }
+    .layout-principal {
+        flex-direction: column;
+        width: 100%;
+        padding: 0 16px;
+        align-items: center;
+    }
+    .columna-izquierda {
+        width: 100%;
+        max-width: 320px;
+    }
+    .widget-con-foto {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* ============================================================
+   LISTA DE EXPERIENCIA (VIÑETA REDONDA Y TEXTO REDUCIDO)
+   ============================================================ */
+.lista-experiencia {
+    padding-left: 18px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.lista-experiencia .empresa {
+    font-size: 0.62rem;
+    font-weight: bold;
+    color: #f8fafc;
+}
+
+.lista-experiencia .fecha {
+    font-size: 0.48rem;
+    color: #a7f3d0;
+    opacity: 0.85;
+}
+
+.lista-experiencia .rol {
+    font-size: 0.52rem !important;
+    color: #e2e8f0;
+    margin-top: 4px !important;
+    line-height: 1.4 !important;
+    opacity: 0.85;
+}
+
+/* ============================================================
+   10. FORMACIÓN, EDUCACIÓN Y CERTIFICACIONES (NUEVO BLOQUE)
+   ============================================================ */
+.lista-formacion {
+    padding-left: 18px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.lista-formacion .titulo-grado,
+.lista-formacion .nombre-curso {
+    font-size: 0.62rem;
+    font-weight: bold;
+    color: #f8fafc;
+}
+
+.lista-formacion .fecha-formacion {
+    font-size: 0.48rem;
+    color: #fca5a5;
+    opacity: 0.9;
+}
+
+.widget-morado .fecha-formacion {
+    color: #d8b4fe;
+}
+
+.lista-formacion .institucion {
+    font-size: 0.54rem !important;
+    color: #e2e8f0;
+    margin-top: 3px !important;
+    opacity: 0.9;
+}
+
+.lista-formacion .detalle {
+    font-size: 0.48rem !important;
+    color: #cbd5e1;
+    margin-top: 4px !important;
+    line-height: 1.4 !important;
+    opacity: 0.85;
+}
+
+.lista-formacion .titulo-obtenido {
+    font-size: 0.52rem !important;
+    font-weight: bold;
+    color: #fef08a;
+    margin-top: 5px !important;
+}
+
+/* ============================================================
+   ESTILOS PARA PROYECTOS DESTACADOS (JERARQUÍA Y LISTAS)
+   ============================================================ */
+
+.lista-proyectos-detallada {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;                       /* Espacio entre cada proyecto */
+    margin-top: 10px;
+}
+
+.item-proyecto {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.cabecera-proyecto {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px;
+}
+
+/* 1. Nombre del proyecto */
+.nombre-proyecto {
+    font-size: 0.62rem;
+    font-weight: bold;
+    color: #f8fafc;
+}
+
+/* 2. Fecha */
+.fecha-proyecto {
+    font-size: 0.48rem;
+    color: #93c5fd;                  /* Tono azul cielo suave */
+    opacity: 0.9;
+}
+
+/* 3. Rol / Subtítulo */
+.rol-proyecto {
+    font-size: 0.52rem !important;
+    color: #bfdbfe;
+    margin: 2px 0 4px 0 !important;
+    opacity: 0.85;
+}
+
+/* 4. Lista de viñetas de tareas/logros */
+.lista-tareas {
+    padding-left: 16px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;                        /* Separación compacta entre viñetas */
+}
+
+.lista-tareas li {
+    font-size: 0.46rem;
+    color: #cbd5e1;
+    line-height: 1.45;
+    opacity: 0.9;
+}
